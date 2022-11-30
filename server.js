@@ -1,12 +1,16 @@
-import { createServer } from 'http';
-import { myGreeting } from './myModule';
-const PORT = 4000;
-
-createServer(function (req, res) {
-  
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write(myGreeting());
-  res.end();
-}).listen(PORT);
-
-console.log("Running at port " + PORT);
+var express = require('express');  
+var app = express();
+app.use(express.static("./www"));  
+/* app.get('/', (req, res) => {
+   res.send('Hello World!')
+ app.post('/', (req, res) => {
+   res.send('post request received')
+ })
+ app.get('/about', (req, res) => {
+  res.send('about')
+})
+ */var server = app.listen(4000, function () {  
+  var host = server.address().address  
+  var port = server.address().port  
+ console.log("Express static listening at port %s", port)  
+})

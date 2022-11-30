@@ -6,10 +6,10 @@
   "name": "nodejs",
   "version": "1.0.0",
   "description": "nodejs",
-  "main": "express3-express3_static.js",
+  "main": "express3_static.js",
   "devDependencies": {},
   "scripts": {
-    "start": "node server.js",
+    "start": "node express3_static.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
