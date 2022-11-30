@@ -1,5 +1,8 @@
 var express = require('express');  
 var app = express();
+app.get("/about", function (req, res) {
+  res.send("About this wiki");
+});
 app.use(express.static("./www"));  
 /* app.get('/', (req, res) => {
    res.send('Hello World!')
@@ -11,9 +14,7 @@ app.use(express.static("./www"));
 })
  */
 
-app.get("/about", function (req, res) {
-  res.send("About this wiki");
-});
+
   var server = app.listen(4000, function () {  
   var host = server.address().address  
   var port = server.address().port  
