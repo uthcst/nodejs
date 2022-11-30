@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "nodejs-mysql",
+    "builds": [
+      { "src": "express3_static.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "/express3_static.js" }
+    ]
+  }
