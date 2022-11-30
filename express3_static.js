@@ -3,7 +3,7 @@ var app = express();
 app.get("/about", function (req, res) {
   res.send("About this wiki");
 });
-app.use(express.static("./www"));  
+app.use(express.static("www"));  
 /* app.get('/', (req, res) => {
    res.send('Hello World!')
  app.post('/', (req, res) => {
