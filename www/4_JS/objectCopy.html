@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Αντιγραφή αντικειμένων</title>
+    <script>
+
+        let x = 10;
+        let y = x;
+        console.log(`x = ${x}, y=${y}`);
+        y = 20;
+        console.log(`Τιμές μετά τη αντιγραφή: x = ${x}, y=${y}`);
+        let m = { value: 10 };
+        let n = m;
+        console.log("m = ", m, " n = ", n);
+        n.value = 12;
+        console.log("Τιμές μετά τη αντιγραφή: m = ", m, " n = ", n);
+
+        //copy all properties of an object with assign method
+        let p = Object.assign({}, m);
+
+        //spread operator to return the properties
+        //of an object
+        let q = { ...m };
+
+        //convert an object to json string
+        //and parse the json string to 
+        //create a new object
+        let r = JSON.parse(JSON.stringify(m));
+
+        //Deep copy with structuredClone
+        let s = structuredClone(m);
+
+        console.log(m, p, q, r, s);
+        p.value = 20;
+        q.value = 30;
+        r.value = 40;
+        s.value = 50;
+        console.log(m, p, q, r, s);
+    </script>
+</head>
+
+<body>
+    <h1>Αντιγραφή αντικειμένων</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

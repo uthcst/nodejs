@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Χειρισμός λαθών</title>
+    <script>
+        function checkPrecision() {
+            let num = 1;
+            let aPrecision = document.getElementById("precision").value;
+            try {
+                // A number cannot have 500 significant digits
+                num.toPrecision(aPrecision);   
+                document.getElementById("output").innerHTML = "Ok";
+            }
+            catch (err) {
+                document.getElementById("output").innerHTML = err.name;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Χειρισμός λαθών</h2>
+    <p>Εισάγεται αριθμό δεκαδικών για μετατροπή:</p>
+    <input id="precision" type="text">
+    <button type="button" onclick="checkPrecision()">Έλεγχος δεκαδικών</button>
+    <div id="output"></div>
+</body>
+
+</html>

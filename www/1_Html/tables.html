@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <title>Πίνακες</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Author name">
+    <meta name="description" content="Πίνακες">
+    <link rel="icon" href="/images/favico.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table,caption,thead,tfoot,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Πίνακες</h1>
+    <h3>Απλός πίνακας</h3>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+
+    <h3>Πίνακας με Τίτλο, Επικεφαλίδα και Υποκεφαλίδα</h3>
+    <table>
+        <caption>Τίτλος</caption>
+        <thead>
+            <tr>
+                <th>Στήλη Α</th>
+                <th>Στήλη Β</th>
+                <th>Στήλη C</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Σύνολα</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>7</td>
+                <td>9</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>

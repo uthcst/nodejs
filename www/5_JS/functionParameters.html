@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Παράμετροι συναρτήσεων</title>
+    <script>
+        //Unspecified parameters are set to undefined.
+        //You need to explicitly set them if you want a
+        //different default.
+        function oldWayFunction(a, b) {
+            a = a || 1;
+            b = b || "Hello";
+            console.log(a,b);
+        }
+        function newWayFunction(a=1, b="Hello") {
+            console.log(a,b);
+        }
+        oldWayFunction();
+        newWayFunction();
+
+        function mySum(){
+            let sum=0;
+            for (let anArg of arguments){
+                sum += anArg;
+            }
+            return sum;
+        }
+        console.log("Sum = ",mySum(1,2,3,4,5));
+    </script>
+
+</head>
+
+<body>
+    <h1>Παράμετροι συναρτήσεων</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

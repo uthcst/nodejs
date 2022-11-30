@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <title>Justify / Align  Grid</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .grid {
+            display: grid;
+            height: 500px;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 100px 200px 100px;
+            background-color: grey;
+            padding: 5px;
+            justify-content:space-evenly;
+            align-content:space-around;
+        }
+        .gridItem {
+            background-color: lightgrey;
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 2rem;
+        }      
+    </style>
+</head>
+
+<body>
+    <h1>Justify / Align  Grid</h1>
+    <div class="grid">
+        <div class="gridItem">1</div>
+        <div class="gridItem">2</div>
+        <div class="gridItem">3</div>  
+        <div class="gridItem">4</div>
+        <div class="gridItem">5</div>
+        <div class="gridItem">6</div>  
+        <div class="gridItem">7</div>
+        <div class="gridItem">8</div>
+        <div class="gridItem">9</div>  
+      </div>
+</body>
+
+</html>

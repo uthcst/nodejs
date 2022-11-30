@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currying</title>
+    <script>
+        const flavors =
+            ['vanilla', 'chocolate', 'strawberry', 'green tea'];
+
+        function createFlavorTest(flavor) {
+            function isFlavor(element) {
+                return element === flavor;
+            }
+            return isFlavor;
+        }
+        const isStrawberry = createFlavorTest('strawberry');
+        const indexOfFlavor = flavors.findIndex(isStrawberry);
+        console.log("Index of straberry = ",indexOfFlavor);
+    </script>
+</head>
+
+<body>
+    <h1>Currying</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

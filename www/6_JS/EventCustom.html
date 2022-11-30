@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Δημιουργία γεγονότων</title>
+    <script type="module">
+        const myEvent = new Event("myEvent", {
+            bubbles: true,
+            cancelable: true
+        })
+        const button = document.querySelector("button");
+        document.body.addEventListener("myEvent",
+            () => console.log("custom event"));
+        button.addEventListener("click", e => {
+            setTimeout(() => document.body.dispatchEvent(myEvent), 2000);
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Δημιουργία γεγονότων</h1>
+    <button>Click me</button>
+</body>
+
+</html>

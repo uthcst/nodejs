@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Προσθήκη μεθόδων και ιδιοτήτων στο prototype </title>
+    <script>
+        //Function constructor
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.talk = function () {
+                console.log("I am " + this.name +
+                    " and my age is " + this.age);
+            }
+        }
+        //Creation of objects with new keyword
+        const anna = new Person("Anna", 24);
+        const petros = new Person("Petros", 28);
+        //Add a new method for all Persons
+        Person.prototype.log = function () {
+            console.log(this);
+        }
+        //Add a new property to all Persons
+        Person.prototype.id = 0;
+        console.log(anna.id);
+        anna.log();
+        petros.log();
+    </script>
+</head>
+
+<body>
+    <h1>Προσθήκη μεθόδων και ιδιοτήτων στο prototype </h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <title>Grid with names</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .grid {
+            display: grid;
+            background-color: grey;
+            padding: 5px;
+            grid-template-areas: 
+                "area1 area2 area3"
+                "area4 area4 area5"
+                "area6 area6 area6";
+        }
+        .grid > * {
+            background-color: lightgrey;
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .gridItem1 {grid-area: area1;}
+        .gridItem2 {grid-area: area2;}
+        .gridItem3 {grid-area: area3;}
+        .gridItem4 {grid-area: area4;}
+        .gridItem5 {grid-area: area5;}
+        .gridItem6 {grid-area: area6;}
+      
+    </style>
+</head>
+
+<body>
+    <h1>Grid with names</h1>
+    <div class="grid">
+        <div class="gridItem1">1</div>
+        <div class="gridItem2">2</div>
+        <div class="gridItem3">3</div>  
+        <div class="gridItem4">4</div>
+        <div class="gridItem5">5</div>
+        <div class="gridItem6">6</div>    
+      </div>
+</body>
+
+</html>

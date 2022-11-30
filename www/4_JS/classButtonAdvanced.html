@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Παράδειγμα κλάσης πλήκτρου</title>
+    <style>
+        button {
+            display: block;
+            font-size: 24pt;
+            width: 100px;
+            margin: 5px 0;
+        }
+    </style>
+    <script type="module">
+        class Button {
+            constructor(containerId, textContent) {
+                const buttonContainer = document.querySelector('#'+containerId);
+                this.parent = buttonContainer;
+                this.textContent = textContent;
+                const button = document.createElement('button');
+                button.textContent = textContent;
+
+                //binds this to the method on click
+                this.onClick = this.onClick.bind(this);
+                button.addEventListener('click', this.onClick);               
+                
+                //binds this to mouseover with arrow function
+                //no need to bind this but event has to be passed
+                //explicilty
+                button.addEventListener('mouseover', ()=>this.onOver(event));
+                button.addEventListener('mouseout', ()=>this.onOut(event));
+                
+                this.parent.append(button);
+            }
+            onClick(event) {
+                console.log(event);
+                console.log('clicked: ' + this.textContent);
+            }
+            onOver(event) {
+                console.log(event);
+                console.log('mouse over: ' + this.textContent);
+            }
+            onOut(event) {
+                console.log(event);
+                console.log('mouse out: ' + this.textContent);
+            }
+        }
+
+        const button1 = new Button('toolbar', 'A');
+        const button2 = new Button('toolbar', 'B');
+        const button3 = new Button('toolbar', 'C');
+
+    </script>
+</head>
+
+<body>
+    <h1>Παράδειγμα κλάσης πλήκτρου</h1>
+    <div id="toolbar"></div>
+</body>
+
+</html>

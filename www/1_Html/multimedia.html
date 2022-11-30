@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <title>Πολυμέσα</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Author name">
+    <meta name="description" content="Πολυμέσα">
+    <link rel="icon" href="/images/favico.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Πολυμέσα</h1>
+    <h3>Αναπαραγωγή αρχείου ήχου</h3>
+    <audio controls src="\media\music1.mp3">
+        Ο Φυλλομετρητής σας δεν υποστηρίζει audio
+    </audio>
+    <h3>Live Streaming - Η φωνή της Ελλάδας</h3>
+    <p>
+        <audio controls  src="https://radiostreaming.ert.gr/ert-voiceofgreece" type="audio/mp3">
+        </audio>
+    </p>
+    <h3>Playing video file</h3>
+    <p>
+        <video width="400" controls>
+            <source src="/media/video1.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+    </p>
+    <h3>Live Streaming video</h3>
+    <p>
+        <video width="400" data-dashjs-player 
+            src="https://cdn.bitmovin.com/content/assets/art-of-motion-dash-hls-progressive/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd"
+            controls>
+        </video>
+    </p>
+    <script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+</body>
+
+</html>

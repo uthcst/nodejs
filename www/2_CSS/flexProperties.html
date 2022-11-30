@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <title>FlexBox Item Properties</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .flex {
+            display: flex;
+            flex-direction:row;
+            flex-wrap: wrap;
+            background-color: grey;
+            padding: 5px;
+        }
+        .flex > * {
+            background-color: lightgrey;
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 2rem;
+            flex-grow: 1;
+            flex-basis: 50px;          
+        }
+        .flexSize3{
+            flex-grow: 3;
+            flex-shrink: 0;
+            flex-basis: 150px;
+        }
+        .flexFixed{
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>FlexBox Item Properties</h1>
+    <div class="flex">
+        <div >1</div>
+        <div class="flexSize3">2</div>
+        <div>3</div>  
+        <div>4</div>
+        <div class="flexFixed">5</div>
+        <div>6</div>   
+      </div>
+</body>
+
+</html>

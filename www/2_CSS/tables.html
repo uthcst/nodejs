@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <title>Πίνακες</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table, tr, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        table{
+            width: 100%;
+        }
+        th {
+            height: 30px;
+            background-color: gray;
+            color: white;
+            text-align: center;       
+        }
+        tr{
+            text-align: right;
+        }
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+        tr:hover {
+            background-color: lightblue;
+        }
+        caption {
+            caption-side: bottom;
+        }
+        .tableContainer {
+            overflow-x:auto;
+            align-content: center;
+        }
+        #Column1{
+            width:30%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Πίνακες</h1>
+    <div class="tableContainer">
+        <table>
+            <caption>Table 1</caption>
+            <tr>
+                <th id="Column1">AA</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Item 1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Item 2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Item 3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Item 4</td>
+            </tr>
+        </table>    
+    </div>
+</body>
+
+</html>

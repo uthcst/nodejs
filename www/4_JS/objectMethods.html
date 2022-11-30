@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πρόσθεση μεθόδων</title>
+    <script>
+        //Function constructor
+        function createPerson(name, age) {
+            return {
+                name,
+                age,
+                talk() {
+                    console.log(`I am ${name} and 
+                my age is ${age}`);
+                }
+            }
+        }
+        const nick = createPerson("Nick", 24);
+        const marios = createPerson("Marios", 27);
+        const eleni = createPerson("Eleni", 31);
+
+        //add method after the creation of object
+        nick.sayName = function () {
+            console.log(`I am ${this.name}`);
+        }
+
+        //copy method from another object
+        marios.sayName = nick.sayName;
+        //bind a method to another object method
+        //eleni borrows nick function sayName
+        let eleniSayName = nick.sayName.bind(eleni);
+       
+        nick.sayName();
+        marios.sayName();
+        eleniSayName();
+        //or with IIFE
+        //Imediate Invocation Function Execution
+        nick.sayName.bind(eleni)();
+    </script>
+</head>
+
+<body>
+    <h1>Πρόσθεση μεθόδων</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

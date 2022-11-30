@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Statements</title>>
+</head>
+
+<body>
+    <h1>Εντολές ελέγχου</h1>
+    <script>
+        let k = 45;
+        document.write("<h2>Έλεγχος περιττού</h2>");
+        if (k % 2 === 0) {
+            document.write("<p>Άρτιος</p>");
+        }
+        else {
+            document.write("<p>Περιττός</p>");
+        }
+
+        document.write("<h2>Έλεγχος με switch</h2>");
+        let v = 1;
+        switch (v) {
+            case 1:
+                document.write("<p>Ένα</p>");
+                break;
+            case 2:
+                document.write("<p>Δύο</p>");
+                break;
+            default:
+                document.write("<p>Άλλος αριθμός</p>")
+        }
+
+        document.write("<h2>Εντολή for</h2>");
+        for (let i = 1; i < 15; i++) {
+            if (i % 2 === 0) {
+                continue;  //skip even numbers
+            }
+            document.write(i + " ");
+        }
+
+        document.write("<h2>Εντολή while</h2>");
+        let x = 0;
+        while (x < 15) {
+            if (x % 2 !== 0) {
+                document.write(x + " ");
+            }
+            x++;
+        }
+
+        document.write("<h2>Εντολή do while</h2>");
+        let n = 0, sum =0;
+        do {
+            n++;
+            sum += n;
+            if (sum > 10) break;  // Exit from while
+            document.write(sum + " ");
+        }
+        while (true) //loop uncoditionally
+    </script>
+</body>
+
+</html>

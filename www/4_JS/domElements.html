@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Προσθαφαίρεση στοιχείων CSS</title>
+    <style>
+        div{
+            margin:10px;
+        }
+    </style>
+    <script>
+        function addElement() {
+            let aNewElement = document.createElement("div");
+            aNewElement.textContent="New Element";
+            let aParent = document.querySelector("#Container");
+            aParent.appendChild(aNewElement); 
+        }
+        function removeElement() {
+            let anElement = document.querySelector("#Container div");
+            anElement.remove();
+        }
+        function removeAll() {
+            let aParent = document.querySelector("#Container");
+            aParent.innerHTML="";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Προσθαφαίρεση στοιχείων CSS</h1>
+    <div>
+        <button onclick="addElement()">Προσθήκη στοιχείου</button>
+        <button onclick="removeElement()">Διαγραφή στοιχείου</button>
+        <button onclick="removeAll()">Διαγραφή όλων</button>
+    </div>
+    <div id="Container"></div>
+</div>
+
+</body>
+
+</html>

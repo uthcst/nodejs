@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μέθοδος Call</title>
+    <script>
+        var person = {
+            info: function () {
+                return this.name + " " + this.email;
+            }
+        }
+        var person1 = {
+            name: "John",
+            email: "john@gmail.com"
+        }
+        console.log(person.info.call(person1));
+    </script>
+</head>
+
+<body>
+    <h1>Μέθοδος Call</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

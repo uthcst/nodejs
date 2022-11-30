@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εμφάνιση ιδιοτήτων αντικειμένου</title>
+    <style>
+        .objectContainer {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            margin: 4px;
+            background-color: lightgray;
+        }
+        .objectContainer *{
+            margin: 4px;
+            padding: 2px;
+        }
+    </style>
+    <script>
+        function displayObject(anObject, anElementId) {
+            let anElement = document.getElementById(anElementId);
+            anElement.innerHTML = "";
+            aContainer = document.createElement("div");
+            aContainer.classList.add("objectContainer");
+            for (let aProperty in anObject){
+                let aLabel=document.createElement("label");
+                let anInput=document.createElement("input");
+                aLabel.textContent=aProperty;
+                aLabel.for=aProperty;
+                anInput.fname=aProperty;
+                anInput.value=anObject[aProperty];
+                aContainer.appendChild(aLabel);
+                aContainer.appendChild(anInput);
+            }
+            anElement.appendChild(aContainer);
+        }
+        function testDisplay(){
+            let aUser ={
+                name: "John Papas",
+                userName: "john",
+                email: "johnP@uth.gr",
+                password: "r6sLNAMd(mK3@mWk"
+            }
+            displayObject(aUser, "output");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Εμφάνιση αντικειμένου</h1>
+    <button onclick="testDisplay();">Εμφάνιση Αντικειμένου</button>
+    <div id="output"></div>
+</body>
+
+</html>

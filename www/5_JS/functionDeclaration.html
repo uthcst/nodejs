@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ορισμός συναρτήσεων</title>
+</head>
+
+<body>
+    <h1>Ορισμός συναρτήσεων</h1>
+    <script>
+        function declareHello() {
+            document.writeln("<p>Ορισμός με δήλωση</p>");
+        }
+        const expressionHello = function () {
+            document.writeln("<p>Ορισμός με έκφραση</p>");
+        }
+        const newObjectHello =
+            new Function("document.writeln('Ορισμός με νεό αντικείμενο')");
+
+        declareHello();
+        expressionHello();
+        newObjectHello();
+
+        //declaration and call of an anonymouw function
+        (function() {
+            document.writeln("<p>Ανώνυμη συνάρτηση</p>");
+        }).call();
+
+        //declaration and call of an arrow function 
+         (() => document.writeln("<p>Arrow function</p>"))();
+
+        //passes and calls a function from another function 
+        const myFunctionCall = function(aFunction, params){
+            aFunction(params);
+        }
+        myFunctionCall(
+            (x)=>{document.write("<p>"+x+"</p>")}, "Parsing and calling a function with parameters"
+        );
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Maps</title>
+    <script>
+        const vathmoi = {
+            'giannis': 9,
+            'nikos': 8,
+            'anna': 7.5
+        };
+        console.log(vathmoi['anna']); // 7
+
+        //Object creation
+        const giannis={};
+        giannis.email ="giannis@uth.gr";
+
+        //Object creation with new
+        const nikos = new Object;
+        nikos["email"]="nikos@uth.gr";
+
+        //Object creation with JSON Notation
+        const anna={   
+            email:"anna@uth.gr",
+            semester: 5,
+            vathmos: 7
+        }
+
+        console.log(giannis, nikos, anna);
+
+        //delete object property
+        delete anna.semester;
+        console.log(anna);
+
+        //for in loop fro object properties 
+        console.log("Properties of Anna");
+        for (let aProperty in anna){
+            console.log(aProperty, anna[aProperty]);
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Ιδιότητες αντικειμένων</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

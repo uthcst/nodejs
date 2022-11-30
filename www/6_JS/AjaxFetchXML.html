@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch XML</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        th {
+            background-color: gray;
+            color: white;
+        }
+    </style>
+    <script>
+        async function getXMLData() {
+            try {
+                const result = await fetch("/data/albums.xml");
+                const aText = await result.text();
+                //fetch reads XML data as text
+                //DomParser parser text to XML Document;
+                const parser = new DOMParser();
+                let anXML = parser.parseFromString(aText, "application/xml");
+                showXMLData(anXML);
+            } catch (err) {
+                console.error("error:", err);
+            }
+        }
+        function arrayToTable(anArray){
+            //converts anArray of objects to an HTML table
+            if (!anArray?.length > 0) return "";
+            //create the table header
+            let aHeaderHTML = "<tr>" 
+                + Object.keys(anArray[0])
+                    .map(aKey => `<th>${aKey}</th>`).join("") 
+                + "</tr>";
+            //Create a table row for each item
+            let aRowsHTML = anArray.map(
+                anItem => "<tr>" 
+                    + Object.keys(anItem).map( aKey => `<td>${anItem[aKey]}</td>`).join("") 
+                    + "</tr>")
+                    .join("");
+            return "<table>"+aHeaderHTML+aRowsHTML+"</table>";
+        }
+
+        function showXMLData(anXMLDoc) {
+            let anHTML = `<table><tr><th>ID</th>
+                <th>Title</th><th>URL</th></tr>`
+            // Use the tag name to fetch all albums
+            let albumsXML = anXMLDoc.getElementsByTagName("album"); 
+            //define a function to read the value for a specific album property
+            function getXMLNodeTagText(anXML, aTag){
+                return anXML.getElementsByTagName(aTag)[0].childNodes[0].nodeValue;
+            }
+            albums=[];
+            //create a javascript object for each XML album
+            for (let anAlbumXML of albumsXML) {
+                let album={};
+                album.id= getXMLNodeTagText(anAlbumXML,"id");
+                album.title= getXMLNodeTagText(anAlbumXML,"title");
+                album.url= getXMLNodeTagText(anAlbumXML,"url");
+                albums.push(album);
+            }
+            //get the html table for the albums array
+            let aTableHTML= arrayToTable(albums);
+            document.getElementById("output").innerHTML = aTableHTML;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Fetch XML</h1>
+    <button onclick="getXMLData();">Fetch XML Data</button>
+    <div id="output"></div>
+</body>
+
+</html>

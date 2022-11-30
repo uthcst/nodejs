@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Παράδειγμα callbacks και τιμών this</title>
+    <script type="module">
+        function showMessage(aMessage) {
+            let anElement = document.getElementById("output");
+            anElement.innerHTML += `<div> 
+                ${(new Date).toLocaleTimeString()}:  
+                ${aMessage} <\div>`;
+        }
+        const nick = {
+            name: "Nick",
+            talk() {
+                setTimeout(function (){
+                    console.log(this);
+                    showMessage(this.name);
+                }, 1000)
+            }
+        }
+        const petros = {
+            name: "Petros",
+            talk() {
+                setTimeout(() => {
+                    console.log(this);
+                    showMessage(this.name);
+                }, 2000)
+            }
+        }
+        const mary = {
+            name: "Mary",
+            talk() {
+                let myself = this;
+                setTimeout(() => {
+                    console.log(myself);
+                    showMessage(myself.name);
+                }, 3000)
+            }
+        }
+        nick.talk();
+        petros.talk();
+        mary.talk();
+    </script>
+</head>
+
+<body>
+    <h1>Παράδειγμα callbacks και τιμών this</h1>
+    <div id="output"></div>
+</body>
+
+</html>

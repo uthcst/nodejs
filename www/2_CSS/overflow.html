@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <title>Ιδιότητα Overflow</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .overVisible, .overClip, .overHidden, .overScroll, .overAuto{
+            border: 1px solid black;
+            background-color: darkgray;
+            width: 60px;
+            height: 50px;
+            margin: 30px;
+        }
+        .overVisible{
+            overflow: visible;
+        }
+        .overVisible{ overflow: visible;}
+        .overHidden{ overflow: hidden;}
+        .overClip{ overflow: clip;}
+        .overScroll{ overflow:scroll;}
+        .overAuto{ overflow: auto;}
+    </style>
+</head>
+
+<body>
+    <h2>Ιδιότητα Overflow</h2>
+    <div class="overVisible">Visible  One Two Three Four</div>
+    <div class="overHidden">Hidden  One Two Three Four</div>
+    <div class="overClip">Clip  One Two Three Four</div>
+    <div class="overScroll">Scroll  One Two Three Four</div>
+    <div class="overAuto">Auto  One Two Three Four</div>
+</body>
+
+</html>

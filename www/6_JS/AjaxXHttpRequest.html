@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest</title>
+    <script>
+        function getData(){
+            let xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "/data/testData.txt",true);
+            xhttp.send();
+            xhttp.onreadystatechange = function(){
+                if (this.readyState ==4 && this.status == 200){
+                    document.getElementById("output").innerHTML = this.responseText;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>XMLHttpRequest</h1>
+    <button onclick="getData();">Get Data</button>
+    <div id="output"></div>
+</body>
+
+</html>

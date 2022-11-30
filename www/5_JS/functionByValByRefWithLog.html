@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Κλήση με τιμή ή αναφορά</title>
+    <script src="utils.js" defer>
+
+    </script>
+    <script type="module">
+        var myLog = new Logger(document, "output", "large"); 
+
+        function incInteger(n) {
+            n = n + 1;
+        }
+        function incArrayInteger(n) {
+            n[0] = n[0] + 1;
+        }
+        let i = 2;
+        myLog.log(`before incInteger  ${i}`);
+        incInteger(i);
+        myLog.log(`after incInteger ${i}`);
+        let m = [i];
+        myLog.log(`before incArrayInteger ${m[0]}`);
+        incArrayInteger(m);
+        myLog.log(`after incArrayInteger ${m[0]}`);
+        myLog.log("Hi",45, [23,45,12], {value: 45});
+    </script>
+</head>
+
+<body>
+    <h1>Κλήση με τιμή ή αναφορά</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+    <div id="output"></div>
+</body>
+
+</html>

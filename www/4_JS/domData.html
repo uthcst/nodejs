@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Data: Διαγραφή με 3 κλικ</title>
+    <style>
+        div{
+            width:100px;
+            display: inline-block;
+            border:1px solid black;
+            background-color: lightgray;
+            font-size: 3rem;
+            text-align: center;
+            margin:10px;
+        }
+    </style>
+    <script>
+        function handleClick(event) {
+            let anElement = event.currentTarget; 
+            let clickCount = parseInt(anElement.dataset.clickcount) + 1;
+            console.log(`Element ${anElement.textContent} cliks ${clickCount}`);
+            anElement.dataset.clickcount = clickCount;
+            if (clickCount >= 3){
+                anElement.remove();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>DOM Data: Διαγραφή με 3 κλικ</h1>
+    <div data-clickcount="0" onclick="handleClick(event)">1</div>
+    <div data-clickCount="0" onclick="handleClick(event)">2</div>
+    <div data-clickCount="0" onclick="handleClick(event)">3</div>
+</body>
+
+</html>

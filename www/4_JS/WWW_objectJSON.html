@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εμφάνιση Αντικειμένου</title>
+    <style>
+        #jsonData {
+            min-width: 400px;
+            min-height: 200px;
+            overflow: auto;
+        }
+        #output {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        #output *{
+            margin: 4px;
+            padding: 2px;
+        }
+    </style>
+    <script>
+        function displayObject(anObject, anElementId) {
+            let anElement = document.getElementById(anElementId);
+            anElement.innerHTML = "";
+            aHead = document.createElement("h3");
+            aHead.textContent = "Object Properties";
+            if (!anObject){
+                anObject = JSON.parse(document.getElementById("jsonData").value);
+            }
+            //anElement.appendChild(aHead);
+            for (let aProperty in anObject){
+                let aLabel=document.createElement("label");
+                let anInput=document.createElement("input");
+                aLabel.textContent=aProperty;
+                aLabel.for=aProperty;
+                anInput.fname=aProperty;
+                anInput.value=anObject[aProperty];
+                anElement.appendChild(aLabel);
+                anElement.appendChild(anInput);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Εμφάνιση αντικειμένου</h1>
+    <div>
+        <textarea id="jsonData">{"value":"12"}</textarea>
+    </div>
+    <button onclick="displayObject(null,'output');">Εμφάνιση Αντικειμένου</button>
+    <div id="output">
+
+    </div>
+</body>
+
+</html>

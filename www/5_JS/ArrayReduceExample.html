@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Παράδειγμα μεθόδου reduce</title>
+    <script>
+        const myArray = ["a", "b", "a", "b", "c"];
+        const myArrayWithNoDuplicates = myArray.reduce(
+            (accumulator, currentValue) => {
+                if (!accumulator.includes(currentValue)) {
+                    return [...accumulator, currentValue];
+                }
+                return accumulator;
+            },
+            [],
+        );
+        console.log(myArrayWithNoDuplicates);
+
+
+        //Another Example for flattening an array
+        const flattened = [
+            [0, 1],
+            [2, 3],
+            [4, 5],
+        ].reduce(
+            (accumulator, currentValue) => accumulator.concat(currentValue),
+            [],
+        );
+        console.log(flattened);
+        // flattened is [0, 1, 2, 3, 4, 5]
+
+
+    
+    </script>
+
+</head>
+
+<body>
+    <h1>Παράδειγμα μεθόδου reduce</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

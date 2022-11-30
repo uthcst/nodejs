@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ασύγχρονη συνάρτηση</title>
+    <script>
+        function doSomethingAsynchronous() {
+            return new Promise((resolve) => {
+                setTimeout(function () {
+                    const result = "Promise Resolved"; //doSomeWork();
+                    resolve(result);
+                }, 2000);
+            });
+        }
+
+        function runPromise() {
+            document.getElementById("demo").innerHTML = "Executing Promise";
+            doSomethingAsynchronous().then(function (aResult) {
+                document.getElementById("demo").innerHTML = aResult;
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Ασύγχρονη συνάρτηση</h1>
+    <button onclick="runPromise();">Run Promise</button>
+    <h3 id="demo"></h3>
+</body>
+
+</html>

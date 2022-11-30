@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Αριθμοί</title>
+    <script>
+        let m = ["11", 1, 2, 3, "45", "nick"];
+        console.log(m); //prints array to console
+        console.log(m[0]); //prints first item
+        m.push("newItem"); //adds a new item to the end
+        console.log(m[m.length - 1]); //prints last item
+        let y = m.shift(); //retrieves and removes first item 
+        console.log("Poped item ", y); //prints removed item
+        console.log(m); //prints final array
+
+        let l = ["a","d","f"];
+        for (let i = 0; i < l.length; i++) {
+            console.log(l[i]);
+        }
+
+        for (let anItem of l) {
+            console.log(anItem);
+        }
+
+        let k = [];
+        for (let i = 0; i < 5; i++) {
+            k[i] = 2 * i + 1;
+        }
+        //Returns values
+        console.log("for of loop");
+        for (let anItem of k) {
+            console.log(anItem);
+        }
+        //Returns keys - indexes
+        console.log("for in loop");
+        for (let anItem in k) {
+            console.log(anItem);
+        }
+
+        let list=[2,4,6,7,8];
+        console.log("Initial list: ", list);
+        list.splice(1,0,3); //add element at index 1
+        console.log("list after add with splice: ", list);
+        let removed = list.splice(0,2); //remove first two elements
+        console.log("List after remove with splice: ", list);
+        console.log("Removed items: ",removed);
+        let copied = list.slice(0,1); //copy first element
+        console.log("List after slice: ", list);
+        console.log("Copied items: ",copied);
+
+    </script>
+</head>
+
+<body>
+    <h1>Πίνακες</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+    <script>
+        //this  alone
+        let k = this;
+        console.log("This Alone ", k);
+
+        //this in a function
+        function myThis() {
+            console.log("This in a function ", this);
+        }
+        //in an method
+        const nick = {
+            name: "Nick",
+            sayThis: function () {
+                console.log("This in a method ", this);
+            }
+        }
+        myThis();
+        nick.sayThis();
+        function handleClick(aParam) {
+            console.log("This passed to event handler", aParam);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Η λέξη κλιδί this</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+    <p></p>
+    <div>
+        <!-- in an event -->
+        <button onclick="console.log('This in an event ' + this);">
+            Click to log this
+        </button>
+
+        <!-- in an event paased to event handler-->
+        <button onclick="handleClick(this);">
+            Click to send this
+        </button>
+    </div>
+</body>
+
+</html>

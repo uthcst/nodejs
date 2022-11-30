@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getters / Setters αντικειμένων</title>
+    <script>
+        //Function constructor
+        function Person(name, age) {
+            this.name = name;
+            //Private property
+            let _age = age;
+            //Define getter /setter for object
+            Object.defineProperty(this, "age", {
+                get: function(){
+                    return _age;
+                },
+                set: function(value){
+                    _age = value;
+                }
+            });
+            //method accessing private var
+            this.getAge = () => age;
+            this.talk = function () {
+                console.log("I am " + this.name +
+                    " and my age is " + _age);
+            }
+        }
+        const anna = new Person("Anna", 24);
+        const petros = new Person("Petros", 28);
+        anna.talk();
+        petros.talk();
+    </script>
+</head>
+
+<body>
+    <h1>Getters / Setters αντικειμένων</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

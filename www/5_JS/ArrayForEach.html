@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μέθοδος forEach</title>
+    <script>
+        let anArray = [1,2,3,4,5]
+        //Example using the new method
+        anArray.forEach(anItem => console.log(anItem));
+
+         //Implementation of forEach
+         //with a function
+        function forEach(arr, aFunction){
+            for (let anItem of arr){
+                aFunction(anItem);
+            }
+        }
+
+        forEach (anArray, console.log);
+    </script>
+
+</head>
+<body>
+    
+</body>
+        <h1>Μέθοδος forEach</h1>
+        <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</html>

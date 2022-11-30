@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Προσπέλαση ιδιοτήτων αντικειμένου</title>
+    <script>
+        let aUser ={
+            name: "John Papas",
+            userName: "john",
+            email: "johnP@uth.gr",
+        }
+        console.log("display using for .. in loop");
+        for (let aProperty in aUser){
+            console.log(`Property: ${aProperty} value: ${aUser[aProperty]}`);
+        }
+        console.log("display using keys / values");
+        console.log("Keys = ", Object.keys(aUser));
+        console.log("Values = ", Object.values(aUser));
+
+        console.log("display as JSON");
+        console.log(JSON.stringify(aUser));
+
+    </script>
+</head>
+
+<body>
+    <h1>Προσπέλαση ιδιοτήτων αντικειμένου</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

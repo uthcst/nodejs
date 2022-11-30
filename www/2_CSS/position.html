@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <title>Ιδιότητα Position</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .posStatic, .posRelative, .posFixed, .posSticky, .posAbsolute{
+            border: 1px solid black;
+            background-color: darkgray;
+        }
+        .posRelative{
+            position: relative;
+            left: 30px;      
+        }
+         .posFixed{
+            position: fixed;
+            top: 0px;
+            right: 5px;
+        }
+        .posSticky{
+            position: sticky;
+            top: 30px;
+        }
+        .posAbsolute{
+            position: absolute;
+            top: 50px;
+            left:20px;
+        }
+        .posContainer{
+            position: relative;
+            border: 1px solid red;
+            background-color: lightgray;
+            width: 400px;  
+            height: 400px;
+            z-index: -100; 
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Ιδιότητα Position</h1>
+    <div class="posStatic">Static Position (Default)</div>
+    <div class="posRelative">Relative Position</div>
+    <div class="posFixed">Fixed Position</div>
+    <div class="posSticky">Sticky Position</div>
+    <div class="posContainer">   
+        <div class="posAbsolute">Absolute Position</div>
+    </div>
+</body>
+
+</html>

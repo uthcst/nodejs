@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template strings</title>
+</head>
+
+<body>
+    <h1>Template strings</h1>
+    <script>
+        //Template strings
+        let age = 32;
+        let name = "nick";
+        let message = `I am ${name} and my age is ${age}`;
+        document.write(message);
+        //multiline template string
+        let x = `Τμήμα Πληροφορικές
+        και Τηλεπικοινωνιών`;
+        //use string concatenation to print string with variable
+        document.writeln('<h2>' + x + "</h2>");
+        //use template string
+        document.writeln(`<h2> ${x} </h2>`);
+    </script>
+</body>
+
+</html>

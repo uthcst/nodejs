@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μέθοδος πίνακα reduce</title>
+    <script>
+        let m = [1, 2, 3, 4];
+        const sum = m.reduce((accumulator, currentValue) =>
+            accumulator + currentValue);
+        console.log(`Το άθροισμα είναι ${sum}`);
+
+        // reducer takes an array, reducer() and 
+        // initialValue as argument
+        function reduce(arr, reducer, initialValue) {
+            let startIndex = 1;
+            if (initialValue) {
+                accumulator = initialValue;
+                startIndex = 0;
+            } else {
+                accumulator = arr[0];
+            }
+            for (let i = startIndex; i < arr.length; i++) {
+                accumulator = reducer(accumulator, arr[i], i, arr);
+            }
+            return accumulator;
+        }
+
+        const sum1 = reduce(m,
+            (accumulator, currentValue) => accumulator + currentValue);
+        console.log(`Το άθροισμα είναι ${sum1}`);
+    
+    </script>
+
+</head>
+
+<body>
+    <h1>Μέθοδος πίνακα reduce</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

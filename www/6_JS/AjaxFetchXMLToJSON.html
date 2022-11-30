@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch XML με μετατροπή σε JSON</title>
+    <!-- CSS -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        th {
+            background-color: gray;
+            color: white;
+        }
+    </style>
+    <script>
+        async function getXMLData() {
+            try {
+                const result = await fetch("/data/albums.xml");
+                const aText = await result.text();
+                //fetch reads XML data as text
+                //DomParser parser text to XML Document;
+                const parser = new DOMParser();
+                let anXML = parser.parseFromString(aText, "application/xml");
+                //showXMLData(anXML);
+                showJSONData(xmlToJson(anXML));
+            } catch (err) {
+                console.error("error:", err);
+            }
+        }
+        //definition of a function to convert XML to JSON
+        function xmlToJson(xml) {
+            let jsonData = {};
+            if (xml.nodeType === 1) {
+                if (xml.attributes.length > 0) {
+                    jsonData.attributes = {};
+                    for (let j = 0; j < xml.attributes.length; j++) {
+                        const attribute = xml.attributes.item(j);
+                        jsonData.attributes[attribute.nodeName] = attribute.nodeValue;
+                    }
+                }
+            }
+
+            const textNodes = [].slice.call(xml.childNodes).filter(node => node.nodeType === 3);
+            if (xml.hasChildNodes() && xml.childNodes.length === textNodes.length) {
+                jsonData = [].slice.call(xml.childNodes).reduce((text, node) => text + node.nodeValue, '');
+            } else if (xml.hasChildNodes()) {
+                for (let i = 0; i < xml.childNodes.length; i++) {
+                    const item = xml.childNodes.item(i);
+                    const nodeName = item.nodeName.replace(':', '_');
+                    if (nodeName !== '#text') {
+                        if (typeof jsonData[nodeName] === 'undefined') {
+                            jsonData[nodeName] = this.xmlToJson(item);
+                        } else {
+                            if (typeof jsonData[nodeName].push === 'undefined') {
+                                const old = jsonData[nodeName];
+                                jsonData[nodeName] = [];
+                                jsonData[nodeName].push(old);
+                            }
+                            jsonData[nodeName].push(this.xmlToJson(item));
+                        }
+                    }
+                }
+            }
+            return jsonData;
+        }
+
+        function showJSONData(aJSON) {
+            let anHTML =`<table><tr><th>ID</th>
+                <th>Title</th><th>URL</th></tr>`
+            // Parse JSON data to an array of albums    
+            let albums = aJSON.root.album;//.root; //parse(aJSON).root;
+            for (let anAlbum of albums) {
+                anHTML += "<tr><td>" +
+                    anAlbum.id + "</td><td>" +
+                    anAlbum.title + "</td><td>" +
+                    anAlbum.url + "</td></tr>";
+            }
+            anHTML += "</table>";
+            //Show table with albums
+            document.getElementById("output").innerHTML = anHTML;
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Fetch XML με μετατροπή σε JSON</h1>
+    <button onclick="getXMLData();">Fetch XML Data</button>
+    <div id="output"></div>
+</body>
+
+</html>

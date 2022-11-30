@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μέθοδος Bind</title>
+    <script>
+        function talk() {
+            let anElement = document.getElementById("output");
+            anElement.textContent = `I am ${this.name}`;
+        }
+        let nick = {name: "Nick" };;
+        let petros = { name: "Petros" };
+        let mary = {name: "Mary" };
+        let talkPetros = talk.bind(petros);
+        nick.talk =  talk.bind(nick);
+        //we cannot change the binding 
+        //of a mthod already binded
+        let talkMary = nick.talk.bind(mary);
+    </script>
+</head>
+
+<body>
+    <h1>Μέθοδος Bind</h1>
+    <button onclick="nick.talk();">Nick Talk</button>
+    <button onclick="talkPetros();">Petros Talk</button>
+    <button onclick="talkMary();">Mary Talk</button>
+    <div id="output"></div>
+</body>
+
+</html>

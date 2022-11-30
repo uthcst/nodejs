@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εκφράσεις Λάμδα (1)</title>
+    <script>
+        // From lamda expressions to Javascript
+
+        // def adder = λx.(x + 2)
+        // adds 2 to input parameter x
+        let adder = function (x) {
+            return x + 2;
+        };
+
+        // def applier = λf.(f 3)
+        // calls function f with argument 3 
+        let applier = function (f) {
+            return f(3);
+        };
+
+        // The same lambda exressions
+        // using arrow functions
+        // def adder = λx.(x + 2)
+        let adder_Arrow = x => x + 2;
+
+        // def applier = λf.(f 3)
+        // calls function f with argument 3 
+        let applier_Arrow = f => f(3);
+
+        console.log(adder(3));
+        console.log(applier(adder));
+        console.log(adder_Arrow(3));
+        console.log(applier_Arrow(adder_Arrow));
+        //console.log(adder(2)(3));
+        let result = applier(adder);  // 5
+    </script>
+</head>
+
+<body>
+    <h1>Εκφράσεις Λάμδα (1)</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

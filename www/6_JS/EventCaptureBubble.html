@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture - Bubble γεγονότων</title>
+<style>
+    body{
+        height: 400px;
+    }
+    table {
+        border: 20px solid lightgrey;
+    }
+    td{
+        padding: 10px;;
+    }
+
+</style>
+    <script type="module">
+        let onBodyClick = function () {
+            console.log("body clicked");
+        }
+        let onTableCaptureClick = function () {
+            console.log("table clicked capture");
+            //event.stopPropagation();
+        }
+        let onTableBubbleClick = function () {
+            console.log("table clicked bubble");
+        }
+        let onRowClick = function () {
+            console.log("row clicked");
+        }
+        let onCellClick = function () {
+            console.log("cell clicked");
+        }
+
+        let aTable = document.querySelector("table");
+        let aCell = document.querySelector("td");
+        //capture phase - from parent to child
+        aTable.addEventListener('click', onTableCaptureClick, true);
+        //bubbling phase - from child to parent
+        document.body.addEventListener('click', onBodyClick, false);
+        aTable.addEventListener('click', onTableBubbleClick, false);
+        aCell.addEventListener('click', onCellClick, false);
+    </script>
+</head>
+
+<body>
+    <h1>Capture - Bubble γεγονότων</h1>
+    <table>
+        <tr>
+            <td>xyz</td>
+        </tr>
+    </table>
+</body>
+
+</html>

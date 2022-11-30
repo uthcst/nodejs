@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <album>
+      <id>1</id>
+      <thumbnailUrl>https://via.placeholder.com/150/92c952</thumbnailUrl>
+      <title>accusamus beatae ad facilis cum similique qui sunt</title>
+      <url>https://via.placeholder.com/600/92c952</url>
+   </album>
+   <album>
+      <id>2</id>
+      <thumbnailUrl>https://via.placeholder.com/150/771796</thumbnailUrl>
+      <title>reprehenderit est deserunt velit ipsam</title>
+      <url>https://via.placeholder.com/600/771796</url>
+   </album>
+   <album>
+      <id>3</id>
+      <thumbnailUrl>https://via.placeholder.com/150/24f355</thumbnailUrl>
+      <title>officia porro iure quia iusto qui ipsa ut modi</title>
+      <url>https://via.placeholder.com/600/24f355</url>
+   </album>
+   <album>
+      <id>4</id>
+      <thumbnailUrl>https://via.placeholder.com/150/d32776</thumbnailUrl>
+      <title>culpa odio esse rerum omnis laboriosam voluptate repudiandae</title>
+      <url>https://via.placeholder.com/600/d32776</url>
+   </album>
+</root>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <title>Layout Flex</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width:100vw;
+            height:100vh;
+            display:flex;
+            flex-direction: column;
+        }
+        header, nav, aside, main, footer {
+            border: 1px solid black;
+            background-color: lightgrey;
+        }
+        .mainWrapper{
+            display: flex;
+            flex-grow:1;
+            flex-wrap: wrap;
+        }
+        aside {
+            flex-grow: 1;
+        }
+        main {
+            flex-grow: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Header</header>
+    <nav>Nav</nav>
+    <div class="mainWrapper">
+        <aside>Aside</aside>
+        <main>Main</main>    
+    </div>
+    <footer>Footer</footer>
+</body>
+
+</html>

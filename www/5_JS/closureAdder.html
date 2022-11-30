@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Παράδειγμα Closure Adder</title>
+    <script>
+        function numberAdder(x) {
+            return function (y) {
+                return x + y;
+            };
+        }
+        const add5 = numberAdder(5);
+        const add10 = numberAdder(10);
+        console.log(add5(2)); // 7
+        console.log(add10(2)); // 12
+    </script>
+</head>
+
+<body>
+    <h1>Παράδειγμα Closure Adder</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

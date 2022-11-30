@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Η μέθοδος Object.create</title>
+    <script>
+        //creation with object literal
+        const nick = {
+            name: "nick",
+            age: 23,
+            //define method
+            talk() {
+                console.log("I am " + this.name + " and my age is " + this.age)
+            },
+        };
+        //Creation of a similar object 
+        const mary = Object.create(nick);
+        mary.age=45;
+        mary.name="mary";
+        
+        nick.talk();
+        mary.talk();
+        console.log(nick,mary);
+    </script>
+</head>
+
+<body>
+    <h1>Η μέθοδος Object.create</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

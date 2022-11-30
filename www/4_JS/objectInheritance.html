@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Κληρονομικότητα αντικειμένων</title>
+    <script>
+        //Function constructor
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.talk = function () {
+                console.log("I am " + this.name +
+                    " and my age is " + this.age);
+            }
+        }
+
+        function Student(name, age, school) {
+            Person.call(this, name, age);
+            this.school = school;
+        }
+        Student.prototype = Person.prototype;
+        Student.prototype = new Person();
+        Student.prototype.constructor = Student;
+
+        let jim = new Student("Jim", 19, "Τμήμα Πληροφορικής");
+        console.log(jim);
+    </script>
+</head>
+
+<body>
+    <h1>Κληρονομικότητα αντικειμένων</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

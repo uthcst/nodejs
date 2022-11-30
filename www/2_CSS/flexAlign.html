@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <title>Flex Align Items</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .flex {
+            display: flex;
+            flex-direction:row;
+            width: 400px;;
+            height: 400px;
+            justify-content:space-evenly;
+            align-items:center;;
+            background-color: grey;
+            padding: 5px;
+        }
+        .flex > * {
+            flex-grow: 0;
+            background-color: lightgrey;
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Flex Align Items</h1>
+    <div class="flex">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>  
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>   
+      </div>
+</body>
+
+</html>

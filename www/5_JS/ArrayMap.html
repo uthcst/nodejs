@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μέθοδος Πίνακα map</title>
+    <script>
+        //map method
+        let arr = [1, 2, 3, 4, 5];
+        let newArr = arr.map(num => num*num);
+        console.log(newArr);
+
+        // map function implementation 
+        function map(arr, mapFunc) {
+            const mappedArr = [];   
+            for (let anItem of arr) {
+                mappedArr.push(mapFunc(anItem));      
+            }
+            return mappedArr;
+        }
+        
+        console.log(map(arr,(num)=> num*num)); 
+
+        
+
+    </script>
+</head>
+
+<body>
+    <h1>Μέθοδος Πίνακα map</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

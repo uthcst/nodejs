@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Κλάσεις και υποκλάσεις αντικειμένων</title>
+    <script>
+        //Class definition
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+                Person.#personsCount += 1;
+            }
+            //property
+            height = undefined;
+            //method
+            talk () {
+                console.log("I am " + this.name +
+                    " and my age is " + this.age);
+            }
+            //Static and private property
+            static #personsCount = 0;
+            //Static method
+            static getPersonsCount() {
+                return Person.#personsCount;
+            }
+        }
+
+        //Definition of a subclass of Student
+        class Student extends Person {
+            constructor(name, age, school) {
+                //initialize superclass
+                super(name, age);
+                this.school = school;
+            }
+            //private property
+            #grade = undefined;
+            //Getter settter for grade
+            get grade() {
+                //report that someone accessed the grade
+                console.log("returning grade " + this.#grade);
+                return this.#grade;
+            }
+            set grade(x) {
+                //check grade
+                if (x >= 0 && (x <= 10)) {
+                    console.log("changing grade to " + x);
+                    this.#grade = x;
+                }
+                else {
+                    //throw error if invalid grade
+                    throw ("Invalid grade " + x);
+                }
+            }
+        }
+        let aris = new Student("Aris", 19,
+            "Τμήμα Πληροφορικής");
+        aris.grade = 7.5;
+        console.log(aris);
+        console.log("Persons count = " + Person.getPersonsCount());
+    </script>
+</head>
+
+<body>
+    <h1>Κλάσεις και υποκλάσεις αντικειμένων</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Η μέθοδος new</title>
+    <script>
+        //Factory Function
+        function newPerson(name, age) {
+            this.name = name;
+            this.age = age;
+            this.talk = function () {
+                console.log("I am " + this.name +
+                    " and my age is " + this.age);
+            }
+            return this; 
+        }
+
+        /* Creation of objects with factory function.
+        The method call() passes "this" as 
+        the first argumnet in the function */
+        const marios= newPerson.call({},"Marios", 27);
+        const eleni= newPerson.call({},"Eleni", 31);
+
+        //Function constructor
+        function Person(name, age) {
+            //adds: new = {};
+            console.log("This = ", this);
+            this.name = name;
+            this.age = age;
+            this.talk = function () {
+                console.log("I am " + this.name +
+                    " and my age is " + this.age);
+            }
+            // adds: return this
+        }
+        //Creation of objects with new keyword
+        const anna = new Person("Anna", 24);
+        const petros = Person("Petros", 28);
+
+        console.log(marios, eleni, anna, petros);
+    </script>
+</head>
+
+<body>
+    <h1>Η μέθοδος new</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

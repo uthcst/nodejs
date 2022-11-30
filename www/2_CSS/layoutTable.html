@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Table</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height:100%;
+            width:100%;
+        }
+        .leftArea, .mainArea{
+            height:calc(100vh - 93px);
+            vertical-align: top;
+        }
+        .leftArea{
+            width:20%;
+        }
+        aside,main{
+            padding: 2px;  
+        }
+        header{
+            background-color: grey;
+            font-size: 32px;
+            padding: 4px;
+            height: 40px;
+            text-align: center;          
+        }
+        nav{
+            background-color: lightslategray;
+            font-size: 22px;
+            padding: 4px;
+            height: 30px;
+        }
+        footer{
+            background-color: black;
+            color: white;
+            font-size: 12px;
+            padding: 4px;
+            height: 20px;
+        }
+    </style>
+</head>
+<table id="layout">
+    <tr><header>Header</header></tr>
+    <tr><nav>Nav</nav></tr>
+    <tr>
+        <table>
+            <tr>
+                <td class="leftArea"><aside>
+                    <h3>Left Side</h3>
+                </aside></td>
+                <td class="mainArea"><main>
+                    <h2>Main</h2>
+                    <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui repudiandae, necessitatibus veritatis a, velit ad alias consequatur sit blanditiis harum sequi, quibusdam temporibus voluptas error ex eius enim voluptatem explicabo?</article>
+                </main></td>        
+            </tr>
+        </table>
+    </tr>
+    <tr><footer>Τμήμα Πληροφορικής και Τηλεπικοινωνιών</footer></tr>
+</table>
+<body>
+    
+</body>
+</html>

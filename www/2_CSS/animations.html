@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <title>Animations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .div1{
+            width:150px;
+            border: 1px solid black;
+            background-color: lightgray;
+            animation: animation1 3s;
+        }
+        .div2{
+            width:150px;
+            border: 1px solid black;
+            background-color: lightgray;
+            animation: animation1 3s linear 2s infinite alternate;
+        }
+        @keyframes animation1 {
+            from {margin-left: 0px;}
+            to {margin-left: 150px;}          
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Animations</h1>
+    <div class="div1">Animation 1</div>
+    <p></p>
+    <p></p>
+    <div class="div2">Animation 2</div>
+</body>
+
+</html>

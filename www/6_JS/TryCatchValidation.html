@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Χειρισμός λαθών</title>
+    <script>
+        function checkNumber() {
+            const message = document.getElementById("message");
+            message.innerHTML = "";
+            let x = document.getElementById("number").value;
+            try {
+                if (x == "") throw "is empty";
+                if (isNaN(x)) throw "is not a number";
+                x = Number(x);
+                if (x > 10) throw "is too high";
+                if (x < 5) throw "is too low";
+            }
+            catch (err) {
+                message.innerHTML = "Error: " + err + ".";
+            }
+            finally {
+                document.getElementById("number").value = "";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Έλεγχος εισόδου χρήστη</h2>
+    <p>Εισάγετε έναν αριθμό από 5 έως 10:</p>
+    <input id="number" type="text">
+    <button type="button" onclick="checkNumber()">Έλεγχος αριθμού</button>
+    <p id="message"></p>
+</body>
+
+</html>

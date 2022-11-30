@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Δημιουργία αντικειμένων</title>
+    <script>
+        //creation with object literal
+        const nick = {
+            name: "nick",
+            age: 23,
+            //define method
+            talk: function () {
+                console.log("I am " + this.name + " and my age is " + this.age)
+            },
+            //shorter definition for another name
+            say() { console.log(this.name); }
+        };
+        nick.talk();
+
+        //Factory Function
+        function createPerson(name, age) {
+            return {
+                name: name,
+                age, // shortcut for: age: age,
+                talk() {
+                    console.log("I am " + this.name +
+                        " and my age is " + this.age)
+                }
+            }
+        }
+        //creation of objects with factory function
+        const marios= createPerson("Marios", 27);
+        const eleni= createPerson("Eleni", 31);
+        marios.talk();
+        eleni.talk();
+
+        //Function constructor
+        function Person(name, age) {
+            console.log(this);
+            this.name = name;
+            this.age = age;
+            this.talk = function () {
+                console.log("I am " + this.name +
+                    " and my age is " + this.age);
+            }
+        }
+        //Creation of objects with new keyword
+        const anna = new Person("Anna", 24);
+        const petros = new Person("Petros", 28);
+        anna.talk();
+        petros.talk();
+
+        console.log(nick, marios, eleni, anna, petros);
+
+        //add method after the creation of object
+        anna.sayAge = function () {
+            console.log(this.age);
+        }
+
+        //copy method from another object
+        petros.sayAge = anna.sayAge;
+        anna.sayAge();
+        petros.sayAge();
+
+    </script>
+</head>
+
+<body>
+    <h1>Δημιουργία αντικειμένων</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

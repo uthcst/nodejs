@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Παράδειγμα Async / Await</title>
+    <script>
+        function doSomethingAsynchronous(aDelay) {
+            return new Promise((resolve) => {
+                if (aDelay < 0) return reject("Invalid Delay");
+                setTimeout(function () {
+                    const result = `Promise Resolved in ${aDelay} ms`; 
+                    resolve(result);
+                }, aDelay);
+            });
+        }
+        //Definition of an async function 
+        async function asyncAwaitFunction() {
+            document.getElementById("output").innerHTML = "Executing Promise";
+
+            let result = await doSomethingAsynchronous(1000);
+            document.getElementById("output").innerHTML = result; 
+            result = await doSomethingAsynchronous(2000);
+            document.getElementById("output").innerHTML = result;             result = await doSomethingAsynchronous(1500);
+            document.getElementById("output").innerHTML = result; 
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Παράδειγμα Async / Await</h1>
+    <button onclick="asyncAwaitFunction()">Async / Await</button>
+    <h3 id="output"></h3>
+</body>
+
+</html>

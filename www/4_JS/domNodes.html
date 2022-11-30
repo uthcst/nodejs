@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Κόμβοι του DOM</title>
+    <script type="module">
+        function walkTree(root, level) {
+            if (root.nodeType === Node.TEXT_NODE) {
+                console.log(level + 'text:' + root.textContent);
+            } else {
+                console.log(level + root.nodeName);
+            }
+            for (const child of root.childNodes) {
+                walkTree(child, level + "    ");
+            }
+        }
+        walkTree(document.querySelector('html'), "");
+    </script>
+</head>
+
+<body>
+    <h1>Κόμβοι του DOM</h1>
+</body>
+
+</html>

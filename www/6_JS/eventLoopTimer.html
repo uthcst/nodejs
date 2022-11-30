@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+function first() {
+            console.log(1)
+        }
+
+        function second() {
+            setTimeout( function( ){
+                console.log(2)
+            }, 0)
+        }
+
+        function third() {
+            console.log(3)
+        }
+        first();
+        second();
+        third();
+
+        //Async JS - Callbacks
+        const posts = [
+            { title: 'JS Basics', summary: 'This post contains the basics of JS' },
+            { title: 'DOM Basics', summary: 'This post contains the basics of DOM' }
+        ];
+
+        function getPosts() {
+            setTimeout(() => {
+                let output = '';
+                posts.forEach(post => output += `<li>${post.title}</li><p>${post.summary}</p>`);
+                document.body.innerHTML = output;
+            }, 1000)
+        }
+
+        function createPost(post, callback) {
+            setTimeout(() => {
+                posts.push(post);
+                callback();
+            }, 2000)
+        }
+
+        createPost({ title: 'Async Basics', summary: 'This post contains basics of Async' }, getPosts);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <title>Πλεuρικό μενού</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul.menu {
+            background-color: lightgrey;
+            list-style-type: none;
+            position: fixed;
+            width: 150px;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        ul.menu li {
+            display: block;
+            color: black;
+            padding: 4px;
+        }
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: #555;
+            color: white;
+        }
+        .main {
+            margin-left: 150px;
+            padding: 10px;
+            height: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="menu">
+        <li><a href="#home">Αρχή</a></li>
+        <li><a href="#about">Σχετικά</a></li>
+        <li><a href="#projects">Εφαρμογές</a></li>
+        <li><a href="#contact">Επικοινωνία</a></li>
+    </ul>
+    <div id="home" class="main">
+        <h2>Αρχή</h2>
+        <p>..</p>            
+    </div>
+    <div id="about" class="main">
+        <h2>Σχετικά</h2>
+        <p>..</p>            
+    </div>
+    <div id="projects" class="main">
+        <h2>Εφαρμογές</h2>
+        <p>..</p>            
+    </div>
+    <div id="contact" class="main">
+        <h2>Επικοινωνία</h2>
+        <p>..</p>            
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Συμβολοσειρές</title>
+    <style>
+        div {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Συμβολοσειρές</h1>
+    <script>
+        let s = "Τμήμα Πληροφορικής";
+        //char at 0
+        let r1 = s.charAt(0);
+        document.write("<div>char at 0 = " + r1 + "</div>");
+        //charCode at 0
+        let r2 = s.charCodeAt(0);
+        document.write("<div>charCodeAt at 0 = " + r2 + "</div>");
+        //indexOf
+        let r3 = s.indexOf("ρ");
+        document.write("<div>index of 'ρ' = " + r3 + "</div>");
+        //lastIndexOf
+        let r4 = s.lastIndexOf("ρ");
+        document.write("<div>lastIndex of 'ρ' = " + r4 + "</div>");
+        let r5 = s.toUpperCase();
+        //toUpperCase
+        document.write("<div>toUpperCase = " + r5 + "</div>");
+        let r6 = s.toLowerCase()
+        //toLowerCase
+        document.write("<div>toLowerCase = " + r6 + "</div>");
+        //slice
+        let r7 = s.slice(2, 8)
+        document.write("<div>slice from 2 to 8 = " + r7 + "</div>");
+        //slice
+        let r8 = s.slice(-8, -2)
+        document.write("<div>slice reverse from -8 to -2 = " + r8 + "</div>");
+        //replace
+        let r9 = s.replace("κής", "κής και Τηλεπικοινωνιών")
+        document.write("<div>replace = " + r9 + "</div>");
+        //split with delimeter space
+        let r10 = s.split(" ")
+        document.write("<div>split with space = " + r10 + "</div>");
+    </script>
+</body>
+
+</html>

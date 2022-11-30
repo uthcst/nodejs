@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Σύγκριση δηλωτικού με προστακτικό προγραμματισμό</title>
+    <script>
+
+        function imperativeExample() {
+            const w = [1, 2, 3, 4, 5, 6];
+            const e = [];
+            for (let item of w) {
+                e.push(item + 1);
+            }
+            console.log(e);
+        }
+        function declarativeExample() {
+            const w = [1, 2, 3, 4, 5, 6];
+            const e = w.map(x => x + 1);
+            console.log(e);
+        }
+        imperativeExample();
+        declarativeExample();
+    </script>
+</head>
+
+<body>
+
+</body>
+<h1>Σύγκριση δηλωτικού με προστακτικό προγραμματισμό</h1>
+<div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+
+</html>

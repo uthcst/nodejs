@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <title>Φόρμες 2</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Author name">
+    <meta name="description" content="Φόρμες 2">
+    <link rel="icon" href="/images/favico.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Φόρμες 2</h1>
+</body>
+<form action="/">
+    <p>
+        <label for="fname">Ονοματεπώνυμο</label>
+        <input type="text" name="fname">
+    </p>
+    <p>
+        <label for="fbirthdate">Ημερομηνία γέννησης</label>
+        <input type="date" min="1/1/1900" name="fname">
+    </p>
+    <p>
+        <label for="ffile">Αρχείο</label>
+        <input type="file" name="ffile">
+    </p>
+    <p>
+        <label for="fgrade">Βαθμός</label>
+        <input type="range" min="0" max="10" name="fgrade">
+    </p>
+    <p>
+        <label for="fcomment">Σχόλιο</label>
+        <textarea rows=10 cols=30 name="fcomment">
+
+        </textarea>
+    </p>
+    <p>
+        <label for="frowser">Φυλλομετρητής</label>
+        <input list="browsers" name="fbrowser">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+    </p>
+    <label for="fcountry">Επιλογή Χώρας:</label>
+    <select id="fcountry">
+        <optgroup label="Ευρώπη">
+            <option>Ελλάδα</option>
+            <option>Γαλλία</option>
+            <option>Αγγλία</option>
+        </optgroup>
+        <optgroup label="Αφρική">
+            <option>Κένυα</option>
+            <option>Λιβύη</option>
+            <option>Αίγυπτος</option>
+        </optgroup>
+    </select>
+    <p>
+        <input type="submit" value="Αποστολή">
+        <input type="reset" value="Καθαρισμός">
+    </p>
+</form>
+
+</html>
