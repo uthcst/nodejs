@@ -1,0 +1,23 @@
+var http = require('http');
+var fs = require('fs');
+let nick = {
+    name: "nick",
+    age: 20
+}
+let mary = {
+    name: "mary",
+    age: 21
+}
+let aFileName='./www/data/persons.json';
+let aJsonString = JSON.stringify([nick, mary]);
+//write to file
+fs.writeFile(aFileName, aJsonString, function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+});
+//read from file
+fs.readFile(aFileName,function (err, data) {
+    if (err) throw err;
+    let [p1, p2] = JSON.parse(data);
+    console.log(p1, p2);
+});
