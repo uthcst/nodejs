@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Exrpessions</title>
+    <script>
+    </script>
+</head>
+<script>
+    let text = "Welcome to www";
+    let n = text.search(/com/i);
+    console.log(n);  //3
+    
+    let m = text.match(/e/g);
+    console.log(m);  //3
+
+    let text1 = "123456789";
+    let result1 = text1.match(/[1-4]/g);
+    console.log(result1);
+
+    let text2 = "Hellooo  ooo  oo";
+    let result2 = text2.match(/o+/g);
+    console.log(result2);
+
+    let text3 = "123.231";
+    let result3 = text3.match(/[0-9]+/g);
+    console.log(result3);
+
+</script>
+<h1>Regular Exrpessions</h1>
+<div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

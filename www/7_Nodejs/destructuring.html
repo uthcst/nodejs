@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desctructuring</title>
+    <script>
+        const anArray = [1, 2, 3, 4, 5];
+        const [m, n] = anArray;
+        console.log(m); // 1 
+        console.log(n); // 2
+
+
+        let [firstname, surname, ...rest] = ["John", "Doe", "doctor", "surgeon"];
+        console.log(firstname); // John
+        console.log(surname); // Doe
+        // Note that type of `rest` is Array.
+        console.log(rest[0]); // doctor
+        console.log(rest[1]); // surgeon
+        console.log(rest.length); // 2
+
+        //destructuring an object
+        let nick = { name: "Nick", age: 22 };
+        let { name, age: nickAge } = nick;
+        console.log(name, nickAge);
+    </script>
+</head>
+
+<body>
+    <h1>Desctructuring</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

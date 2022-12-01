@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modules</title>
+    <script type="module">
+        //importing a named export
+        import {name, age} from "./myModule.js";
+        import {Student,aris} from "./Student.js";
+        console.log(name, age);
+
+        console.log(aris);
+    </script>
+</head>
+
+<body>
+    <h1>Modules</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>

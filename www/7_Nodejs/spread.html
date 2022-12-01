@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Syntax</title>
+    <script>
+        let arr = [6, 8, 2];
+        let max = Math.max(...arr);
+        console.log(max); // 8
+
+        //combining spread operetors
+        let arr1 = [2, -3, 5, 4];
+        let arr2 = [9, 2, -7, 2];
+        let max1 = Math.max(...arr1, 56, ...arr2, -9);
+        console.log(max1); // 56
+
+        //spreading a string
+        let str = "string";
+        console.log([...str]); // s,t,r,i,n,g
+
+        //spreading an object
+        let nick = { name: "Nick", age: 22 };
+        //cloning nick to petros
+        let peter = {...nick};
+        peter.name ="peter";
+        console.log(nick,petros);
+        //merging two objects in another object
+        let student = { grade: 9 };
+        let nickFromSpread = {...nick, ...student};
+        console.log(nickFromSpread);
+    </script>
+</head>
+
+<body>
+    <h1>Spread Syntax</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>
