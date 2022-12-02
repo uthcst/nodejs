@@ -1,13 +1,13 @@
-var http = require('http');
-var url = require('url');
+const http = require('http');
+const url = require('url');
 const PORT = 4000;
 
 http.createServer(function (req, res) {
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  var q = url.parse(req.url, true).query;
-  var txt = q.year + " " + q.month;
+  let q = url.parse(req.url, true).query;
+  let txt = q.year + " " + q.month;
   res.end(txt);
-}).listen(PORT);
+}).listen(port);
 
-console.log("Running at port " + PORT);
+console.log("Running at port " + port);
 console.log("test with url http://localhost:4000/?year=2022&month=October")

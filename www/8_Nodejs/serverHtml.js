@@ -1,6 +1,6 @@
-var http = require('http');
-var fs = require('fs');
-const PORT = 4000;
+const http = require('http');
+const fs = require('fs');
+const port = 4000;
 
 http.createServer(function (req, res) {
   fs.readFile("./www/home.html", function(err, data) {
@@ -8,6 +8,6 @@ http.createServer(function (req, res) {
     res.write(data);
     res.end();
   });
-}).listen(PORT);
+}).listen(port);
 
-console.log("Running at port " + PORT);
+console.log("Running at port " + port);

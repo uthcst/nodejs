@@ -2,9 +2,9 @@
     "version": 2,
     "name": "nodejs",
     "builds": [
-      { "src": "express3_static.js", "use": "@vercel/node" }
+      { "src": "app.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/express3_static.js" }
+      { "src": "/(.*)", "dest": "/app.js" }
     ]
   }

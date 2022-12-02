@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Data Form</title>
+    <style>
+        form{
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+        }
+        form *{
+            padding: 3px;
+            margin: 3px;;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add new book</h1>
+    <form action="/addBook" method="post">
+        <label for="author">Author</label>
+        <input name="author" type="text" />
+        <label for="title">Title</label>
+        <input name="title" type="text" />
+        <label for="year">Year</label>
+        <input name="year" type="text" />
+        <input type="reset" /><input type="submit" />
+    </form>
+</body>
+
+</html>

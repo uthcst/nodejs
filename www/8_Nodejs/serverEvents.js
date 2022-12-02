@@ -1,11 +1,11 @@
-var events = require('events');
-var tempAlarm = new events.EventEmitter();
+const events = require('events');
+const tempAlarm = new events.EventEmitter();
 
 //Create an event handler:
-var highTemp = function () {
+const highTemp = function () {
   console.log('High Temp Alarm');
 }
-var lowTemp = function () {
+const lowTemp = function () {
   console.log('Low Temp Alarm');
 }
 //Assign the event handler to an event:

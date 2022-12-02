@@ -1,11 +1,10 @@
-var http = require('http');
-var fs = require('fs');
-var url = require('url');
-const PORT = 4000;
-
+const http = require('http');
+const fs = require('fs');
+const url = require('url');
+const port = 4000;
 http.createServer(function (req, res) {
-  var q = url.parse(req.url, true);
-  var filename = "./www" + q.pathname + ".html";
+  let q = url.parse(req.url, true);
+  let filename = "./www" + q.pathname + ".html";
   fs.readFile(filename, function (err, data) {
     if (err) {
       res.writeHead(404, { 'Content-Type': 'text/html' });
@@ -15,5 +14,5 @@ http.createServer(function (req, res) {
     res.write(data);
     res.end();
   });
-}).listen(PORT);
-console.log("Running at port " + PORT)
+}).listen(port);
+console.log("Running at port " + port);
